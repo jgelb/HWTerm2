@@ -35,7 +35,47 @@ public class driver{
 	}
 	
     }
-	    
+    public int bunnyEars2(int bunnies) {
+	if (bunnies == 0){
+	    return 0;
+	}
+	else if (bunnies == 1){
+	    return 2;
+	}
+	else if (bunnies == 2){
+	    return 5;
+	}
+	else{
+	    if (bunnies % 2 == 0){
+		return 3 + bunnyEars2(bunnies - 1);
+	    }
+	    else{
+		return 2 + bunnyEars2(bunnies -1);
+	    }
+	}
+    }
+    public int sumDigits(int n) {
+	if (n == 0){
+	    return 0;
+	}
+	else{
+	    return n % 10 + sumDigits(n/10);
+	}
+    }
+
+
+    public int strCount(String str, String sub) {
+	if (str.length() < sub.length()){
+	    return 0;}
+	else{
+	    if (str.substring(0,sub.length()).equals(sub)){
+		return 1 + strCount(str.substring(sub.length()), sub);
+	    }
+	    else{
+		return strCount(str.substring(1), sub);
+	    }
+	}
+    }	    
     public static void main (String[] args) {
 	driver x = new driver();
 	System.out.println(x.fib(5));
