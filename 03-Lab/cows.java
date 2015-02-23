@@ -27,6 +27,8 @@ public class cows{
 
     public static void main (String[] args){
 	cows a = new cows();
+	a.fillboard();
+	System.out.println(a);
     }
 
     
