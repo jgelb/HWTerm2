@@ -5,18 +5,18 @@ public class merge {
     public static ArrayList<Integer> B = new ArrayList<Integer>();
     Random r = new Random();
     public merge() {
-	A.add(6);
-	A.add(4);
-	A.add(8);
-	A.add(8);
+	A.add(10);
+	A.add(35);
+	A.add(5);
+	A.add(9);
 	A.add(1);
-	B.add(1);
-	B.add(1);
-	B.add(3);
-	B.add(5);
-	B.add(7);
-	B.add(9);
-	B.add(11);
+	B.add(2);
+	B.add(4);
+	B.add(6);
+	B.add(8);
+	B.add(10);
+	B.add(12);
+	B.add(15);
     }
     public static ArrayList<Integer> combine( ArrayList<Integer> A, ArrayList<Integer> B){
 	int i = 0;
@@ -66,7 +66,7 @@ public class merge {
 	System.out.println(x.A);
 	System.out.println(x.B);
 	System.out.println();
-	System.out.println(x.combine(A ,B));
-	//System.out.println(mergeSort(x.A));
+	//System.out.println(x.combine(A ,B));
+	System.out.println(mergeSort(x.A));
     }
 }
