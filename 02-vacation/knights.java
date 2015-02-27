@@ -20,7 +20,7 @@ public class knights {
 		    k ++;
 		}
 	    }}
-	board[x][y] = 0;
+	board[x][y] = 30;
     }
 
     public void print(){
@@ -40,7 +40,7 @@ public class knights {
 	if (solved || board[x][y] != 0 ){
 	    return;
 	}
-	if (count == 24){
+	if (count== 24){
 	    print();
 	    solved = true;
 	}
@@ -64,6 +64,6 @@ public class knights {
     public static void main(String[] args){
 	knights x = new knights(3,4);
         x.print();
-        x.doMove(4,3,1);
+        x.doMove(2,2,1);
     }
 }
