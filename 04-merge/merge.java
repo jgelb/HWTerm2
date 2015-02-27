@@ -1,10 +1,10 @@
 import java.io.*;
 import java.util.*;
-public class Merge {
-    ArrayList<Integer> A = new ArrayList<Integer>();
-    ArrayList<Integer> B = new ArrayList<Integer>();
+public class merge {
+    public static ArrayList<Integer> A = new ArrayList<Integer>();
+    public static ArrayList<Integer> B = new ArrayList<Integer>();
     Random r = new Random();
-    public Merge() {
+    public merge() {
 	A.add(6);
 	A.add(4);
 	A.add(8);
@@ -18,7 +18,7 @@ public class Merge {
 	B.add(9);
 	B.add(11);
     }
-    public ArrayList<Integer> combine( ArrayList<Integer> A, ArrayList<Integer> B){
+    public static ArrayList<Integer> combine( ArrayList<Integer> A, ArrayList<Integer> B){
 	int i = 0;
 	int j = 0;
 	ArrayList<Integer> ans = new ArrayList<Integer>();
@@ -44,27 +44,29 @@ public class Merge {
 	    j++;}
 	return ans;
     }
-    public ArrayList<Integer> Sub(ArrayList<Integer> base, int first, int last ) {
+    public static ArrayList<Integer> Sub(ArrayList<Integer> base, int first, int last ) {
 	ArrayList<Integer> ans = new ArrayList<Integer>();
 	for (int i = first; i<last; i ++) {
 	    ans.add(base.get(i));
 	}
 	return ans;
     }
-    public ArrayList<Integer> mergeSort(ArrayList<Integer> base ) {
+    public static ArrayList<Integer> mergeSort(ArrayList<Integer> base ) {
 	int half = base.size() / 2;
 	if (base.size() == 1 ) {
 	    return base;
 	}
-	else { combine (mergeSort ((base.Sub(0,half)) , mergeSort(base.Sub(half , base.size()))));
+	else {
+	   return  combine (mergeSort (Sub(base,0,half)) , mergeSort(Sub(base, half , base.size())));
 	}
+        
     }
     public static void main (String[] args){
-	Merge x = new Merge();
+	merge x = new merge();
 	System.out.println(x.A);
 	System.out.println(x.B);
 	System.out.println();
-	//System.out.println(x.combine(A ,B));
-	System.out.println(mergeSort(x.A));
+	System.out.println(x.combine(A ,B));
+	//System.out.println(mergeSort(x.A));
     }
 }
