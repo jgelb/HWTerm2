@@ -1,3 +1,6 @@
+//This has an infinite loop and I don't know why
+
+
 import java.io.*;
 import java.util.*;
 public class merge {
@@ -129,10 +132,10 @@ public class merge {
 	    return combine2(Sub2(base , 0,1) , Sub2(base,1,2));
 	}
 	else {
-	    return  combine2 (mergeSort2 (Sub2(base,0,half)) , mergeSort2(Sub2(base, half , base.length)));
+	    return  combine2 (mergeSort2 (Sub2(base,0,half)) , mergeSort2(Sub2(base, half , base.length)) );
 	}
-        
-    }
+       
+    } 
 
     //-----------------------------------------------------------------------------
     public static void main (String[] args){
@@ -145,6 +148,7 @@ public class merge {
 	System.out.println(x.C);
 	System.out.println(x.combine2(x.C, x.D));
 	Sub2(x.C, 0, 12);
+	System.out.println(mergeSort2(x.C));
 	
     }
 }
