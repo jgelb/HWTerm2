@@ -15,7 +15,7 @@ public class selection {
     */
     int pivate = x.get(0);
     public void doPivate(){
-	int k = 0;
+	int k = 1;
 	y.add(pivate);
 	while (k < x.size()){
 	    if (x.get(k) > pivate){
@@ -27,10 +27,21 @@ public class selection {
 	    else if (x.get(k) == pivate){
 		y.add(y.indexOf(pivate), pivate);
 	    }
-	    k++ ;
+	    k++;
 	}
     }
 
+    /*
+1 select pivot value
+2. swap pivot with a[h]
+3. li = l hi = h -1
+4
+while li,h{
+if a[li] < p; li++
+else swap a[li] and a[hi]; hi --}
+
+then check for location
+     */
     public static void main (String[] args){
 	selection a = new selection();
     }
