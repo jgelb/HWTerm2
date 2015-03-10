@@ -57,16 +57,15 @@ public class selectionclass{
 	int pi,pval;
 	pi = partition(a,l,h);
 	pval = a[pi];
-	if (k==pi)
-	    return pval;
+	if (l >= h)
+	    return;
 	else if (k > pi)
-	    return qselect(a,k,pi+1,h);
-	else
-	    return qselect(a,k,l,pi-1);
-    }
-    public int select(int k){
+	     qselect(a,k,pi+1,h);
+	     qselect(a,k,l,pi-1);
+	
+   public void sort(){
 	b = Arrays.copyOf(a,a.length); // makes b, a copy of a
-	return qselect(b,k,0,b.length-1);
+	return qselect(b,0,b.length-1);
     }
     public static void main(String[] args) {
         selectionclass q = new selectionclass();
