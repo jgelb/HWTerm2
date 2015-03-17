@@ -22,8 +22,9 @@ public class LList {
 	}
 	else{
 	    Node before = find(n - 1);
+	    toAdd.setNext(before.getNext());
 	    before.setNext(toAdd);
-
+	    
 	}
 	    
     }
