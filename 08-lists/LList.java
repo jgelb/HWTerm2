@@ -6,9 +6,11 @@
 
 public class LList {
     private Node l=null;
+    private Node dummy = null
     public void add(String s){
 	Node tmp = new Node(s);
 	tmp.setNext(l);
+	dummy.setNext(tmp);
 	l = tmp;
     }
     public Node find (int n){
