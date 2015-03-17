@@ -1,3 +1,9 @@
+
+//write add string to add to front
+//add (index, string)
+//find --------> get
+//remove(index)
+
 public class LList {
     private Node l=null;
     public void add(String s){
@@ -13,6 +19,15 @@ public class LList {
 	}
 	return tmp;
     }
+    public int length(){
+	Node tmp = l;
+	int count;
+	for (count = 1; tmp != null; tmp=tmp.getNext()){
+	    count += 1;
+	}
+	return count;
+    }
+    
     public void insert (int n, String s){
 	Node toAdd = new Node(s);
 	int count;
