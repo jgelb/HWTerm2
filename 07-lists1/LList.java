@@ -8,7 +8,7 @@ public class LList {
     public Node find (int n){
 	Node tmp = l;
 	int count;
-	for (count = 1; count < n; tmp=tmp.getNext()){
+	for (count = 1; count < n && tmp != null; tmp=tmp.getNext()){
 	    count += 1;
 	}
 	return tmp;
