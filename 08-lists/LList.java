@@ -56,7 +56,7 @@ public class LList {
     }	    
     
     public void rem(int n){
-	//goes to the previosu node, and links it to the node 2 spaces away
+	//goes to the previous node, and links it to the node 2 spaces away
 	//this in effect doesn't delete the node, but just doesn't include it in the list.
 	get(n - 1).setNext(get(n-1).getNext().getNext());
 
