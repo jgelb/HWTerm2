@@ -18,14 +18,14 @@ public class LList {
 	//adjust length
 	length = length + 1;
     }
-    public Node get (int n){
+    public String  get (int n){
 	Node tmp = dummy;
 	int count;
 	
 	for (count = -1; count < n && tmp != null; tmp=tmp.getNext()){
 	    count += 1;
 	}
-	return tmp;
+	return tmp.getData();
     }
     public int length(){
 	Node tmp = l;
@@ -35,7 +35,7 @@ public class LList {
 	}
 	return count;
     }
-    
+    /*
     public void add (int n, String s){
 	Node toAdd = new Node(s);
 	int count;
@@ -44,7 +44,7 @@ public class LList {
 	  toAdd.setNext(l);
 	  l = toAdd;
 	  }
-	*/
+	
 
 	//all the same as before
 	Node before = get(n - 1);
@@ -59,8 +59,10 @@ public class LList {
 	//goes to the previous node, and links it to the node 2 spaces away
 	//this in effect doesn't delete the node, but just doesn't include it in the list.
 	get(n - 1).setNext(get(n-1).getNext().getNext());
+	len --;
+	}*/
 
-    }
+    
     public String toString(){
 	String s = "";
 	Node tmp;
