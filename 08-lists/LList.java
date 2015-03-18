@@ -6,17 +6,23 @@
 
 public class LList {
     private Node l=null;
-    private Node dummy = null;
+    private Node dummy = new Node(" ");
+    private int length = 0;
+
     public void add(String s){
 	Node tmp = new Node(s);
-	tmp.setNext(l);
+	//new
+	tmp.setNext(dummy.getNext());
+	//from before
 	dummy.setNext(tmp);
-	l = tmp;
+	//adjust length
+	length = length + 1;
     }
-    public Node find (int n){
-	Node tmp = l;
+    public Node get (int n){
+	Node tmp = dummy;
 	int count;
-	for (count = 1; count < n && tmp != null; tmp=tmp.getNext()){
+	
+	for (count = -1; count < n && tmp != null; tmp=tmp.getNext()){
 	    count += 1;
 	}
 	return tmp;
@@ -30,25 +36,36 @@ public class LList {
 	return count;
     }
     
-    public void insert (int n, String s){
+    public void add (int n, String s){
 	Node toAdd = new Node(s);
 	int count;
-	if (n == 0){
-	    toAdd.setNext(l);
-	    l = toAdd;
-	}
-	else{
-	    Node before = find(n - 1);
-	    toAdd.setNext(before.getNext());
-	    before.setNext(toAdd);
-	    
-	}
-	    
+	/*Don't need this code because there is always a node before the one we add
+	  if (n == 0){
+	  toAdd.setNext(l);
+	  l = toAdd;
+	  }
+	*/
+
+	//all the same as before
+	Node before = get(n - 1);
+	toAdd.setNext(before.getNext());
+	before.setNext(toAdd);
+	
+	//adjust length
+	length = length + 1;
+    }	    
+    
+    public void rem(int n){
+	//goes to the previosu node, and links it to the node 2 spaces away
+	//this in effect doesn't delete the node, but just doesn't include it in the list.
+	get(n - 1).setNext(get(n-1).getNext().getNext());
+
     }
     public String toString(){
 	String s = "";
 	Node tmp;
-	for (tmp = l; tmp != null; tmp=tmp.getNext()){
+	// had to modify because of dummy node
+	for (tmp = dummy.getNext(); tmp != null; tmp=tmp.getNext()){
 	    s = s + tmp + " --> ";
 	}
 	s = s + "null";

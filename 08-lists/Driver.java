@@ -7,8 +7,10 @@ public class Driver{
 	    l.add(""+i);
 	}
 	System.out.println(l);
-	System.out.println(l.find(2));
-        l.insert(2, "chicken");
+	System.out.println(l.get(2));
+        l.add(2, "chicken");
+	System.out.println(l);
+	l.rem(2);
 	System.out.println(l);
     }
 }
