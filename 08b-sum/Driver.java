@@ -9,11 +9,11 @@ public class Driver{
 	System.out.println(t);
 	long start, end;
 
-	for (int i=0; i < 100; i++){
-	    l.add(""+i);
+	for (int i=0; i < 100000; i++){
+	    l.add(i);
 	}
 	ArrayList<Integer> x = new ArrayList<Integer>();
-	for(int i = 0; i < 100; i ++){
+	for(int i = 0; i < 100000; i ++){
 	    x.add(r.nextInt(100) );
 	}
 	
@@ -36,8 +36,8 @@ public class Driver{
 	
         
         total = 0;
-	for(int i = -1; i < 100; i ++){
-	    total += (int)(l.get(i));
+	for(int i = -1; i < 100000; i ++){
+	    total += (l.get(i));
 	}
 	
 	    
@@ -50,7 +50,7 @@ public class Driver{
 	
         total = 0;
         
-	for(int i = 0; i < 100; i ++){
+	for(int i = 0; i < 100000; i ++){
 	    total += x.get(i);
 	}
 	

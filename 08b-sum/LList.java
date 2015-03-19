@@ -6,10 +6,10 @@
 
 public class LList {
     private Node l=null;
-    private Node dummy = new Node(" ");
+    private Node dummy = new Node(-1);
     private int length = 0;
 
-    public void add(String s){
+    public void add(int s){
 	Node tmp = new Node(s);
 	//new
 	tmp.setNext(dummy.getNext());
@@ -18,12 +18,21 @@ public class LList {
 	//adjust length
 	length = length + 1;
     }
-    public String  get (int n){
-	Node tmp = dummy;
+    public int  get (int n){
+	/*Node tmp = dummy;
 	int count;
 	
-	for (count = -1; count < n && tmp != null; tmp=tmp.getNext()){
+	for (count = 0; count < n && tmp != null; tmp=tmp.getNext()){
 	    count += 1;
+	}
+	return  tmp.getData();
+	}*/
+
+	int i = 0;
+	Node tmp = dummy.getNext();
+	while(i<n){
+	    tmp = tmp.getNext();
+	    i++;
 	}
 	return tmp.getData();
     }
