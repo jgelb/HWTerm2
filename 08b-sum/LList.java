@@ -3,7 +3,9 @@
 //add (index, string)
 //find --------> get
 //remove(index)
-
+//make a new class llit with a constructor that sets a node = to input node.getnext()
+//then must write a has next to return true if there is more stuff in list(check for null)
+//then write a next, to move to next node and return value in node before move
 public class LList {
     private Node l=null;
     private Node dummy = new Node(-1);
@@ -54,7 +56,6 @@ public class LList {
 	  l = toAdd;
 	  }
 	
-
 	//all the same as before
 	Node before = get(n - 1);
 	toAdd.setNext(before.getNext());
