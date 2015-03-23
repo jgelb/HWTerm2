@@ -20,6 +20,7 @@ public class LList<E> implements Iterable<E>{
 	tmp.setNext(l.getNext());
 	l.setNext(tmp);
     }
+  
 		
     public String toString(){
 	String s = "";
