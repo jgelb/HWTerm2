@@ -12,5 +12,17 @@ public class Driver {
 		System.out.println(s.top());
 		System.out.println(s.pop());
 		System.out.println(s);
+
+		myArrayStack s2 = new myArrayStack();
+		System.out.println("empty: " + s2.empty());
+		for (int i = 0 ; i < Integer.parseInt(args[0]) ; i++) {
+            s2.push(i);
+        }
+		System.out.println(s2);
+		System.out.println(s2.empty());
+		System.out.println(s2.top());
+		System.out.println(s2.pop());
+		System.out.println(s2);
+
 	}
 }
