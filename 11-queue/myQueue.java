@@ -3,14 +3,14 @@ public class myQueue<E> {
     public Node<E> end;
 
     public myQueue(){
-	start = new Node<E>("");
-	end = new Node<E>("");
+	//start = null;
+	//end = null;
 	end.setNext(start);
     }
     public boolean empty(){
 	return (end.getNext() == start);
     }
-    public void add(E e){
+    public void enQueue(E e){
 	Node<E>  tmp = new Node<E>(e);
 	tmp.setNext(end.getNext() );
 	end.setNext(tmp);
@@ -25,4 +25,6 @@ public class myQueue<E> {
 	E retval = start.getNext().getData();
        	return retval;
     }
+
+}
     
