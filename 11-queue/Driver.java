@@ -25,7 +25,7 @@ public class Driver {
 		System.out.println(s2.pop());
 		System.out.println(s2);
 */
-		myQueue<Integer> t = new myQueue<Integer>();
+		myQueue<Integer> t = new myQueue<Integer>(); 
 		
 		System.out.println(t.empty());
 		for (int i = 0 ; i < 10 ; i++) {
