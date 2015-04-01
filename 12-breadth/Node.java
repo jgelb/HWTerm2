@@ -1,11 +1,14 @@
 public class Node {
     private int xcor;
     private int ycor;
+    private char sym;
     private Node next;
+    
     public Node(){
 	xcor = 0;
 	ycor = 0;
 	next = null;
+	sym = 'A';
     }
     public Node(int x, int y){
 	xcor = x;
