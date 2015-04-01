@@ -2,6 +2,10 @@ import java.io.*;
 import java.util.*;
 public class Maze
 {
+
+    private myQueue q = new myQueue();
+
+	
     private char[][] board;
     private int maxX;
     private int maxY;
@@ -49,7 +53,11 @@ public class Maze
 	    }
 	return s;
     }
+    public void solve(int x, int y){
+	
     /*
+
+
       solved - instance variable to indicate we're done
     
     public void solve(int x, int y){
