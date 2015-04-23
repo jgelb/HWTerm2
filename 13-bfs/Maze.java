@@ -72,6 +72,7 @@ public class Maze
 	    solved){
 	    return;
 	}
+<<<<<<< HEAD
 
 	if (board[x][y]==exit){
 	    System.out.println(this);
@@ -89,18 +90,45 @@ public class Maze
 	}
     }
 
+=======
+
+	if (board[x][y]==exit){
+	    System.out.println(this);
+	    solved = true;
+	}
+	delay(100);
+	System.out.println(this);
+	board[x][y]=me;
+	solve(x+1,y);
+	solve(x-1,y);
+	solve(x,y+1);
+	solve(x,y-1);
+	if (!solved){
+	    board[x][y]=visited;
+	}
+    }
+
+>>>>>>> c9f85500442f70bf1df4638b1bb54a33398e8ca6
     /*
       Only adds if the tx,ty spot is available path or exit
     */
     public void addToFront(int tx,int ty, Node current){
 	Node tmp = null;
 	if (board[tx][ty]=='#' || board[tx][ty]=='$'){
+<<<<<<< HEAD
 	    tmp = new Node(tx,ty);
+=======
+	    tmp = new Node(tx,ty, current.getCount() + 1);
+
+	    //test cases go here
+	    tmp.setStar(26,18);
+>>>>>>> c9f85500442f70bf1df4638b1bb54a33398e8ca6
 	    tmp.setPrev(current);
 	    f.add(tmp);
 	}
 						
     }
+<<<<<<< HEAD
 
     public void bfs(int x, int y){
 	//f = new Frontier();
@@ -112,6 +140,20 @@ public class Maze
 	Node current = null;
 	while (!f.isEmpty()){
 	    current = f.remove();
+=======
+
+    public void bfs(int x, int y){
+	f = new Frontier();
+        
+
+	f.add(new Node(x,y));
+
+	int tx=0,ty=0;
+	Node current = null;
+	while (!f.isEmpty()){
+	    current = f.remove();
+
+>>>>>>> c9f85500442f70bf1df4638b1bb54a33398e8ca6
 	    int cx = current.getX();
 	    int cy = current.getY();
 
