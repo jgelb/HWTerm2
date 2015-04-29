@@ -57,7 +57,7 @@ public class Tree{
     public Node rSearch(int i){
 	return rSearch(root,i);
     }
-    //not really sure how to format a tree but this atleast prints everything
+    //not really sure how to format a tree but this at least prints everything
     public String traverse(Node t){
 	if(t == null){
 	    return "";
