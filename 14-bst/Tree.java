@@ -62,7 +62,7 @@ public class Tree{
 	if(t == null){
 	    return "";
 	}
-	return t.getData() + ", " + traverse(t.getLeft()) + traverse(t.getRight());
+	return  traverse(t.getLeft()) +"," + t.getData() +"," + traverse(t.getRight());
     }
     public String toString(){
 	return traverse(root);
