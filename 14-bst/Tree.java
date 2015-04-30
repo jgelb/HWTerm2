@@ -76,6 +76,52 @@ public class Tree{
     public String ascend(){
 	return ascend(root);
     }
+    public void remove(int i){
+	Node t = root;
+	Node piggy = t;
+	boolean right;
+	while(t.getData()!=i && t!=null){
+	    piggy = t;
+	    if(t.getData()<i){
+		t=t.getRight();
+		right = true;
+	    } else if(t.getData()>i) {
+		t=t.getLeft();
+		right = false;
+	    }
+	}
+	if(t.numKids()==0){
+	    if(right){
+		piggy.setRight(null);
+	    }else{
+		piggy.setLeft(null);
+	    }
+	}else if (t.numKids()==1){
+	    if(right){
+		if(t.getRight() != null){
+		    piggy.setRight(t.getRight());
+		}else {
+		    piggy.setRight(t.getLeft());
+		}
+	    } else {
+		if(t.getRight() != null){
+		    piggy.setLeft(t.getRight());
+		}else {
+		    piggy.setLeft(t.getLeft());
+		}
+	    }
+	} else {
+	    L = t.getRight();
+	    L2 = t;
+	    while (L.getLeft() != null){
+		L2 = L
+		    L = L.getLeft();
+	    }
+	    t = L;
+	    L2.setLeft(null);
+	}
+    }
+
     public static void main(String[] args){
 	Random rnd = new Random();
 	Node r = new Node(40);

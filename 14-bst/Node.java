@@ -27,6 +27,16 @@ public class Node{
     public void setData(int n){
 	data = n;
     }
+    public int numKids(){
+	int n = 0;
+	if(left!=null){
+	    n++;
+	}
+	if(right!=null){
+	    n++;
+	}
+	return n;
+    }
     public String toString(){
 	return data + ",";
     }
